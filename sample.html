@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sample</title>
+  <script type="text/javascript" src="youtube-player.js"></script>
+</head>
+<body>
+  <div id="player-container"></div>
+  <script type="text/javascript">
+  createYTPlayer('player-container', {
+    width: '640',
+    height: '390',
+    playerVars: { 'controls': 0 },
+    videoId: 'M7lc1UVf-VE',
+    events: {
+      'onReady': function(e){
+        console.log('onReady');
+      },
+      'onStateChange': function(e){
+        console.log('onStateChange');
+      }
+    }
+  })
+  .then(
+    function(player){
+      console.log(player);
+    },
+    function(err){
+      console.error(err);
+    }
+  );
+  </script>
+</body>
+</html>
